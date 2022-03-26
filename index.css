@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Inter', sans-serif;
+}
+
+body, h1, p, ul, button {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.main-title {
+    font-family: 'Karla', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1;
+}
+
+.subtitle {
+    margin-top: 14px;
+    margin-bottom: 50px;
+    font-size: 1.25rem;
+}
+
+.accent-title {
+    color: #4ADF86;
+    display: block;
+}
+
+body {
+    position: relative;
+    background: #1C1C1C;
+    min-height: 100vh;
+    color: #FFF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    width: 100%;
+    max-width: 600px;
+    padding: 118px 52px 46px 52px;
+    background: #1F2937;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: #10B981;
+    font-size: 100%;
+}
+
+button:hover,
+button:active {
+    opacity: 0.8;
+}
+
+button#generate {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    color: #FFF;
+}
+
+.passwords {
+    border-top: 1px solid #2F3E53;
+    padding-top: 35px;
+    margin-top: 35px;
+}
+
+.password-list {
+    color: #55F991;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(215px, 1fr));
+    gap: 24px 27px;
+}
+
+.password-list > li,
+.password {
+    border-radius: 6px;
+    background: #273549;
+}
+
+.password-list > li {
+    height: 40px;
+    background-image: url('img/ellipsis.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.password {
+    font-weight: 500;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hidden-password {
+    display: none;
+}
