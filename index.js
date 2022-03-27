@@ -1,11 +1,17 @@
-/* 
-create an array that holds all possible characters
-button to generate 4 random password options
-display password options
-*/
 const chars = String.fromCharCode(...Array(123).keys()).slice(33)
 let passwords = []
 const passwordLength = 15
+const generateEl = document.getElementById('generate')
+let boxes = document.querySelectorAll('.box')
+const clearEl = document.getElementById('clear')
+
+generateEl.addEventListener('click', function() {
+    getRandomPassword()
+})
+
+clearEl.addEventListener('click', function() {
+    clearAllFields()
+})
 
 function getRandomPassword () {
    for(let i = 0; i < 4; i++) {
@@ -15,7 +21,14 @@ function getRandomPassword () {
            randomPassword += chars.charAt(Math.floor(Math.random() * chars.length))
        }
        passwords.push(randomPassword)
-       console.log(randomPassword)
+   }
+   for(let k = 0; k < boxes.length; k++) {
+       boxes[k].textContent = passwords[k]
    }
 }
-getRandomPassword()
+
+function clearAllFields() {
+    boxes.forEach(item => {
+        item.textContent = ''
+    })
+}
