@@ -1,33 +1,21 @@
-const generateBtn = document.getElementById('generate')
-const passwordEl = document.querySelectorAll('.password')
+/* 
+create an array that holds all possible characters
+button to generate 4 random password options
+display password options
+*/
+const chars = String.fromCharCode(...Array(123).keys()).slice(33)
+let passwords = []
+const passwordLength = 15
 
-function generatePassword() {
-    const uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    const lowercase = 'abcdefghijklmnopqrstuvwxyz'
-    const numbers = '1234567890'
-    const specialChar = '#$%&@^`~'
-    const mathSymbols = '<*+!?='
-
-    let characters = uppercase + lowercase + numbers + specialChar + mathSymbols
-    characters = characters.split('')
-
-    let password = ''
+function getRandomPassword () {
+   for(let i = 0; i < 4; i++) {
+    //    4 are for the password boxes
+       let randomPassword = ''
+       for(let j = 0; j < passwordLength; j++) {
+           randomPassword += chars.charAt(Math.floor(Math.random() * chars.length))
+       }
+       passwords.push(randomPassword)
+       console.log(randomPassword)
+   }
 }
-
-function generatePasswords() {
-    
-    // generate a list of passwords based on the number of password elements
-    // let passwords = []
-    // for(let i = 0; i < passwordEl.length; i++) {
-    //     const password = generatePassword()
-    //     passwords.push(password)
-    // }
-
-    // display passwords on the page
-    // for(let i = 0; i < passwords.length; i++) {
-    //     passwordEl[i].textContent = passwords[i]
-    //     passwordEl[i].classList.remove('hidden')
-    // }
-}
-
-generateBtn.addEventListener('click', generatePasswords)
+getRandomPassword()
